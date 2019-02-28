@@ -1,0 +1,18 @@
+<openerp>
+  <data>
+    <record id="view_sale_line_form_b2b" model="ir.ui.view">
+        <field name="name">sale.order.form.b2b</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]" />                
+        <field name="arch" type="xml">                                   
+            <field name="partner_id" position="attributes">
+              <attribute name="readonly">1</attribute>              
+            </field>
+            <xpath expr="//tree/field[@name='price_unit']" position="attributes">
+              <attribute name="readonly">1</attribute>              
+            </xpath>                           
+        </field>
+    </record>
+  </data>
+</openerp>
